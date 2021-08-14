@@ -1,5 +1,4 @@
 import React from 'react';
-import HorizontalLine from '../atoms/HorizontalLine';
 import IconImage from '../atoms/IconImage';
 import SubTitle from '../atoms/SubTitle';
 import Title from '../atoms/Title';

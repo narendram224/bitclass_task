@@ -1,5 +1,5 @@
 import React, {
-  ReactElement, ReactFragment, ReactPortal, ReactChild,
+   ReactFragment, ReactPortal, ReactChild,
 } from 'react';
 
 type mainI = {

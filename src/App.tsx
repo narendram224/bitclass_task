@@ -1,16 +1,19 @@
 import React, { lazy, Suspense } from 'react';
-// import logo from './images';
 import './App.css';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+const HomeComponent = lazy(() => import('./pages/HomePage'));
 
-const AvatarComponent = lazy(() => import('./pages/HomePage'));
 
-const App: React.FC = (): JSX.Element => (
-  <div className="App">
+const App: React.FC = (): JSX.Element => {
+
+    return <Provider store={store}>
+   <div className="App">
     <Suspense fallback={<div>Loading...</div>}>
-      <AvatarComponent />
+      <HomeComponent />
     </Suspense>
-    {/* <HomePage /> */}
   </div>
-);
+  </Provider>
+};
 
 export default App;

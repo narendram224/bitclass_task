@@ -1,7 +1,6 @@
 import React from 'react';
-import { CalendarOutline, StarOutline, AddOutline } from 'react-ionicons';
+import { CalendarOutline, StarOutline } from 'react-ionicons';
 import IconButton from '../atoms/IconButton';
-import IconImage from '../atoms/IconImage';
 import ProfileWithLabel from '../atoms/ProfileWithLabel';
 
 interface upContentI{
