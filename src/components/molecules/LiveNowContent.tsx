@@ -12,23 +12,26 @@ import { ArrowForwardOutline } from 'react-ionicons'
     pay: string;
     rating:string;
     productImage:string;
+    follow: boolean;
 }
 
-const LiveNowContent: React.FC<upContentI> = () => (
-  <div className="relative">
+const LiveNowContent: React.FC<upContentI> = ({title, author, img, rating,productImage,pay,follow}) => {
+    
+  
+  return (<div className="relative">
       <img src="./assets/images/boy1.jpeg"  alt="product_img" />
       <img src="./assets/images/rect1.png"  alt="product_img" className="absolute top-0 left-0" />  
       <div className="absolute bottom-0 text-white  w-full ">
-        <p className=" bg-red-500 p-0.5 w-16 font-bold rounded-md mb-1 ml-4">LIVE</p>
-        <Title titleText="Printing Business Secrets | Start Earning Online" classes="text-white text-base text-left font-bold pl-4 pt-3 leading-6" />
+        <p className=" bg-red-500 p-0.5 w-16 font-bold rounded-md mb-1 ml-4 text-sm text-center">LIVE</p>
+        <Title titleText={title} classes="text-white text-base text-left font-bold pl-4 pt-3 leading-6" />
         <div className=" relative flex justify-between mx-3.5 mt-4 ">
-        <ProfileWithLabel />
+        <ProfileWithLabel label={author} />
         <div className="relative w-18">
         <IconButton
           icon={(
             <p className="w-2 ont-semibold absolute top-0.5 left-3 font-bold text-inherit">+</p>
 )}
-          label="Follow"
+          label={follow?"followed":"follow"}
           bgColor="white"
         />
         </div>
@@ -47,5 +50,6 @@ const LiveNowContent: React.FC<upContentI> = () => (
       </div>
   </div>
 );
+          }
 
 export default LiveNowContent;
