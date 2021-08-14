@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MainLayout from '../components/atoms/MainLayout';
 import Title from '../components/atoms/Title';
+import FooterComponent from '../components/organisum/Footer';
 import Navbar from '../components/organisum/Navbar';
 import ProductSlider from '../components/organisum/ProductSlider';
 import { itemI, RootState } from '../Interfaces/shareInterface';
@@ -48,6 +49,7 @@ useEffect(() => {
       </div>
       <ProductSlider courses={actualData['allProduct']}  />
     </MainLayout>
+    <FooterComponent />
   </div>
 )
   };
