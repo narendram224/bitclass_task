@@ -10,26 +10,27 @@ interface upContentI{
     pay: string;
     rating:string;
     productImage:string;
+    follow:boolean;
 }
 
 const UpcommentContent: React.FC<upContentI> = ({
-  title, author, img, rating, pay, productImage,
+  title, author, img, rating, pay, productImage,follow
 }): JSX.Element => (
   <div className="flex flex-col ">
     <div className="relative">
-      <img src="./assets/images/product1.jpg" alt="product_image" className="product_image rounded-xl" />
+      <img src={productImage} alt="product_image" className="product_image rounded-xl" />
       <div className="absolute bottom-0 left-0 bg-white flex justify-between w-full rounded-b-md flex  p-2 rounded-b-xl ">
-        <ProfileWithLabel />
+        <ProfileWithLabel label={author} />
         <IconButton
           icon={(
             <p className="w-2 ont-semibold absolute top-0.5 left-3  font-bold text-inherit">+</p>
 )}
-          label="Follow"
+          label={follow?"Followed":"Follow"}
         />
       </div>
     </div>
     <div className="">
-      <h1 className="text-white text-left font-bold pl-4 pt-3">Printing Business Secrets | Start Earning Online</h1>
+      <h1 className="text-white text-left font-bold pl-4 pt-3">{title}</h1>
       <div className="flex text-white item-center pl-4 pt-3">
         <CalendarOutline
           color="#ffffff"
@@ -40,8 +41,8 @@ const UpcommentContent: React.FC<upContentI> = ({
 
       </div>
       <div className="flex justify-between text-white p-4">
-        <p className="text-white">INR 99/-</p>
-        <p className="text-white mr-16  line-through text-gray-500">INR 399/-</p>
+        <p className="text-white">{pay==="free"?"Free":`INR ${pay}/-`}</p>
+        <p className="text-white mr-12  line-through text-gray-500">INR 399/-</p>
 
         <p className="flex">
           <StarOutline
@@ -50,7 +51,7 @@ const UpcommentContent: React.FC<upContentI> = ({
             width="20px"
             cssClasses="order-2"
           />
-          4.7
+          {rating}
         </p>
 
       </div>

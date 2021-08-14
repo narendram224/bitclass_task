@@ -4,9 +4,11 @@ import { itemI, RootState } from '../../Interfaces/shareInterface';
 import CardComponent from '../atoms/CardComponent';
 import Spacer from '../atoms/Spacer';
 import LiveNowContent from '../molecules/LiveNowContent';
+import UpcommentContent from '../molecules/UpcommentContent';
 
 interface prodcutI{
   courses?: Array<RootState>|null|any;
+  live?:boolean|false;
 }
 
 //
@@ -19,7 +21,7 @@ const staticData = {
   productImage: '/assets/images/product1.jpg',
 };
 
-const ProductSlider:React.FC<prodcutI> = ({ courses }): JSX.Element => {
+const ProductSlider:React.FC<prodcutI> = ({ courses ,live=false}): JSX.Element => {
   const actualData = useSelector((state:RootState)=>state['search'])
 
   return (<div className="flex w-full overflow-auto md:overflow-x-scroll ">
@@ -28,7 +30,9 @@ const ProductSlider:React.FC<prodcutI> = ({ courses }): JSX.Element => {
         .map((item:itemI)=>{
             return (<Fragment key={item['id']}>
             <CardComponent >
-      <LiveNowContent title={item['title']} author={item['author']} img={staticData.img} pay={item['price']} rating={item['rating']} follow={item['follow']} productImage={staticData.productImage} />
+      {live?<LiveNowContent title={item['title']} author={item['author']} img={staticData.img} pay={item['price']} rating={item['rating']} follow={item['follow']} productImage={staticData.productImage} />
+      :<UpcommentContent title={item['title']} author={item['author']} img={staticData.img} pay={item['price']} rating={item['rating']} follow={item['follow']} productImage={staticData.productImage} />
+      }
     </CardComponent>
     <Spacer size={10} />
             </Fragment>)

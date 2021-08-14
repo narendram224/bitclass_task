@@ -42,11 +42,11 @@ useEffect(() => {
       <div className="align-left mb-6 ml-2 mt-6">
         <Title titleText="Live now" classes="font-bold text-2xl leading-6" />
       </div>
-      <ProductSlider courses={actualData['allProduct']} />
+      <ProductSlider courses={actualData['allProduct']} live={true} />
       <div className="align-left mb-6 ml-2 mt-6">
         <Title titleText="Upcomming Workshop" classes="font-bold text-2xl leading-6" />
       </div>
-      {/* <ProductSlider /> */}
+      <ProductSlider courses={actualData['allProduct']}  />
     </MainLayout>
   </div>
 )

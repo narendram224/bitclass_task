@@ -1,7 +1,7 @@
 [
     {
         "id":"1",
-      "category": "free",
+      "category": "free course",
       "title": "Sketching LIVE | For Everyone Who Loves to Draw!",
       "author": "Adhvith Nambiar",
       "follow":false,
@@ -22,6 +22,7 @@
         "title": "Sketching LIVE | For Everyone Who Loves to Draw!",
         "author": "Adhvith Nambiar",
         "follow":false,
+        "rating":"4.9",
         "price":"1000"
     },
     { "id":"4",
