@@ -3,15 +3,13 @@ import IconButton from '../atoms/IconButton';
 import ProfileWithLabel from '../atoms/ProfileWithLabel';
 import Title from '../atoms/Title';
 import { ArrowForwardOutline } from 'react-ionicons'
-import { handleFollowing } from '../../redux';
-import { useDispatch } from 'react-redux';
+
 import { upContentI } from '../../Interfaces/shareInterface';
 
 
  
 
 const LiveNowContent: React.FC<upContentI> = ({title, author, img, rating,productImage,pay,follow,id}) => {
-  const disptach = useDispatch();
   
   return (<div className="relative w-full h-full ">
       <img src="./assets/images/boy1.jpeg"  alt="product_img" className="rounded-xl" />
@@ -25,14 +23,14 @@ const LiveNowContent: React.FC<upContentI> = ({title, author, img, rating,produc
         <IconButton
         id={id}
           icon={(
-            <p className="w-2 ont-semibold absolute top-0.5 left-3 font-bold text-inherit">+</p>
+            <p className="w-2 font-semibold absolute top-0.5 left-6 font-bold text-inherit">+</p>
 )}
-          label={follow?"followed":"follow"}
+          label={follow?"Followed":"Follow"}
           bgColor="white"
         />
         </div>
         </div>
-        <div className="flex bg-primary justify-between rounded-b-md text-white  mb-1 mt-3  mx-2 p-3 cursor-pointer transform transition duration-500 hover:scale-95">
+        <div className="flex bg-primary justify-between rounded-b-md text-white  mb-1 mt-3   p-3 cursor-pointer transform transition duration-500 hover:scale-95">
           <p className="text-sm font-bold leading-6 ">What the class now for FREE</p>
 
 <ArrowForwardOutline

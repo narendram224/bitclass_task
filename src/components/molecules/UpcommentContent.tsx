@@ -16,7 +16,7 @@ const UpcommentContent: React.FC<upContentI> = ({
         <IconButton
           id={id}
           icon={(
-            <p className="w-2 ont-semibold absolute top-0.5 left-3  font-bold text-inherit">+</p>
+            <p className="w-2 ont-semibold absolute top-0.5 left-6  font-bold text-inherit">+</p>
 )}
           label={follow?"Followed":"Follow"}
         />

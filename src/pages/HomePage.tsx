@@ -14,21 +14,29 @@ interface Props {
 const HomePage: React.FC<Props> = ()=> {
 
   const actualData = useSelector((state:RootState)=>state['search'])
-  const [filteredData, setfilteredData] = useState<itemI[]|[]|any>(actualData['allProduct'])
+  const [filteredData, setfilteredData] = useState<itemI[]|[]|any>([])
 
   const allButtons = ['all', ...new Set(actualData['allProduct'].map((item:itemI) => item.category))]
 const categoryData = actualData['active'];
   const disptach = useDispatch();
 useEffect(() => {
     disptach(fetchActualData())
-  },[disptach])   
-  useEffect(() => { 
-    if (actualData.searchTerm.toLowerCase().trim().length>0) {
-      let tempArr =actualData.allProduct;
-      setfilteredData(tempArr.filter((item:itemI) =>item.title.toLowerCase().includes(actualData.searchTerm.toLowerCase().trim())
-      ))
-    }
-  }, [actualData.searchTerm,actualData.allProduct])
+  },[disptach]) 
+
+  useEffect(() => {
+    setfilteredData(actualData['allProduct']);
+  },[actualData['allProduct']])
+
+  useEffect(() => {
+    setfilteredData(actualData['allProduct']
+      .filter((item:itemI) => {
+        if (item.title.toLowerCase().includes(actualData.searchTerm.toLowerCase().trim()) && categoryData?.toLowerCase()===item['category'].toLowerCase()){
+          return true;
+        }else if (item.title.toLowerCase().includes(actualData.searchTerm.toLowerCase().trim())&&categoryData?.toLowerCase()==="all"){
+          return true;
+        }
+      }))
+    },[categoryData,actualData.searchTerm])
   
   const handleCategoryFilter =(val:string)=>{
       disptach(handleChangeCategory(val))
@@ -42,7 +50,7 @@ useEffect(() => {
       <section className="mt-2 border-b-2 border-gray-600 w-11/12 flex">
         {
           allButtons.map((item:string)=>{
-            return <p className={`p-2 text-gray-700 font-medium capitalize cursor-pointer transform transition duration-500 hover:scale-110 hover:text-primary ${categoryData===item&&"text-primary font-bold border-b-2 border-primary transform transition duration-500 scale-110"} `} key={item} onClick={()=>handleCategoryFilter(item)} >{item}</p>
+            return <p className={` lg:p-3 md:p-2 sm:p-2 p-1.5 text-xs sm:text-sm md:text-base  lg:text-lg   text-gray-700  capitalize cursor-pointer transform transition duration-500 hover:scale-110 hover:text-primary ${categoryData===item&&"text-primary font-bold border-b-2 border-primary transform transition duration-500 scale-110"} `} key={item} onClick={()=>handleCategoryFilter(item)} >{item}</p>
           })
         }
        
@@ -52,11 +60,11 @@ useEffect(() => {
       <div className="align-left mb-6 ml-2 mt-6">
         <Title titleText="Live now" classes="font-bold text-2xl leading-6" />
       </div>
-      <ProductSlider courses={actualData['allProduct']} live={true} categoryData={categoryData} />
+      <ProductSlider courses={filteredData} live={true} categoryData={categoryData} />
       <div className="align-left mb-6 ml-2 mt-6">
         <Title titleText="Upcomming Workshop" classes="font-bold text-2xl leading-6" />
       </div>
-      <ProductSlider courses={actualData['allProduct']} categoryData={categoryData}  />
+      <ProductSlider courses={filteredData} categoryData={categoryData}  />
     </MainLayout>
     <FooterComponent />
   </div>
