@@ -6,7 +6,7 @@ import ProfileWithLabel from '../atoms/ProfileWithLabel';
 
 
 const UpcommentContent: React.FC<upContentI> = ({
-  title, author, img, rating, pay, productImage,follow,id
+  title, author, img, rating, pay, productImage, follow, id
 }): JSX.Element => (
   <div className="flex flex-col ">
     <div className="relative">
@@ -17,8 +17,8 @@ const UpcommentContent: React.FC<upContentI> = ({
           id={id}
           icon={(
             <p className="w-2 ont-semibold absolute top-0.5 left-6  font-bold text-inherit">+</p>
-)}
-          label={follow?"Followed":"Follow"}
+          )}
+          label={follow ? "Followed" : "Follow"}
         />
       </div>
     </div>
@@ -34,7 +34,7 @@ const UpcommentContent: React.FC<upContentI> = ({
 
       </div>
       <div className="flex justify-between text-white p-4">
-        <p className="text-white">{pay==="free"?"Free":`INR ${pay}/-`}</p>
+        <p className="text-white">{pay === "free" ? "Free" : `INR ${pay}/-`}</p>
         <p className="text-white mr-12  line-through text-gray-500">INR 399/-</p>
 
         <p className="flex">
