@@ -1,16 +1,20 @@
-import { HANDLE_CHANGE_SEARCH_FIELD, HANDLE_CHANGE_CATEGORY, FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE } from "./searchType"
+import { HANDLE_CHANGE_SEARCH_FIELD, HANDLE_CHANGE_CATEGORY, FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE, HANDLE_FOLLOW } from "./searchType"
 
  export const handleChangeSearch = (value)=>{
     return {
         type:HANDLE_CHANGE_SEARCH_FIELD,payload:value
     }
 }
- export const handleChangeCategory = user=>{
+ export const handleChangeCategory = category=>{
         return {
             type:HANDLE_CHANGE_CATEGORY,
-            payload:user
+            payload:category
         }
-}  
+}
+export const handleFollowing = (id)=>{
+    return {type:HANDLE_FOLLOW,payload:id}
+}
+ 
 const fetchProductRequest = () => {
     return {
         type: FETCH_PRODUCTS_REQUEST,

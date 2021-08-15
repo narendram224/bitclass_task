@@ -14,7 +14,7 @@ type iBProps={
 const IconButtonTwoLabel: React.FC<iBProps> = ({
   src, title, subtitle, width = 25, classes,
 }):JSX.Element => (
-  <div className={`flex item-center justify-between border-2 border-black rounded-md px-2 py-1.5 ${classes}`}>
+  <div className={`flex item-center justify-between border-2 border-black rounded-md px-2 py-1.5 cursor-pointer ${classes}`}>
     <IconImage src={src} width={width} />
     <div className="pl-1">
       <SubTitle subtitleText={subtitle} align="left" />

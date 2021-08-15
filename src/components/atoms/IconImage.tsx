@@ -9,7 +9,7 @@ interface logoType extends addClassI{
 const IconImage: React.FC<logoType> = ({
   src, width = 20, height = 20, classes,
 }): JSX.Element => (
-  <div className="self-center">
+  <div className="self-start cursor-pointer transform transition duration-500 hover:scale-150 hover:rotate-6">
     <img src={src} width={`${width}px`} height={`${height}px`} alt="img_bitclass" className={`${classes}`} />
   </div>
 

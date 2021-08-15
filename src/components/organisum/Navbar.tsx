@@ -24,11 +24,11 @@ const Navbar :React.FC = (): JSX.Element => {
 
  return <nav className="flex justify-between items-center bg-white z-30 px-4 py-3 xs:py-4 sm:py-6  w-full fixed top-0 left-0 w-full shadow-shade1">
     <div className="flex flex-grow items-center  justify-between xs:justify-start">
-      <IconImage src="/assets/images/humburg.svg" classes="lg:hidden" />
+      <IconImage src="/assets/images/humburg.svg" classes="lg:hidden mt-3.5" />
       <Spacer size={10} classes="hidden xs:block" />
       <Brand src="/assets/images/logo.svg" />
       <Spacer size={20} classes="hidden xs:block" />
-      <Label text="Tech on Bitclass" classes="hidden md:inline" />
+      <Label text="Tech on Bitclass" classes="hidden md:inline cursor-pointer" />
       <Spacer size={8} classes="hidden xs:block" />
       <SearchOutline
         color="#00000"

@@ -1,20 +1,12 @@
 import React from 'react';
 import { CalendarOutline, StarOutline } from 'react-ionicons';
+import { upContentI } from '../../Interfaces/shareInterface';
 import IconButton from '../atoms/IconButton';
 import ProfileWithLabel from '../atoms/ProfileWithLabel';
 
-interface upContentI{
-    title:string;
-    author:string;
-    img: string;
-    pay: string;
-    rating:string;
-    productImage:string;
-    follow:boolean;
-}
 
 const UpcommentContent: React.FC<upContentI> = ({
-  title, author, img, rating, pay, productImage,follow
+  title, author, img, rating, pay, productImage,follow,id
 }): JSX.Element => (
   <div className="flex flex-col ">
     <div className="relative">
@@ -22,6 +14,7 @@ const UpcommentContent: React.FC<upContentI> = ({
       <div className="absolute bottom-0 left-0 bg-white flex justify-between w-full rounded-b-md flex  p-2 rounded-b-xl ">
         <ProfileWithLabel label={author} />
         <IconButton
+          id={id}
           icon={(
             <p className="w-2 ont-semibold absolute top-0.5 left-3  font-bold text-inherit">+</p>
 )}
@@ -49,7 +42,7 @@ const UpcommentContent: React.FC<upContentI> = ({
             color="#F69F1B"
             height="20px"
             width="20px"
-            cssClasses="order-2"
+            cssClasses="order-2 transform transition duration-500 hover:scale-110 "
           />
           {rating}
         </p>

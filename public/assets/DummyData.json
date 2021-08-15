@@ -10,7 +10,7 @@
     },
     { "id":"2",
         "category": "workshops",
-        "title": "Sketching LIVE | For Everyone Who Loves to Draw!",
+        "title": "Phone Photography | Start a Profitable Career",
         "author": "Adhvith Nambiar",
         "follow":false,
         "price":"99",
@@ -26,7 +26,7 @@
         "price":"1000"
     },
     { "id":"4",
-        "category": "free",
+        "category": "free course",
         "title": "Chakra Healing | Start Healing Your Energy",
         "author": "Adhvith Nambiar",
         "follow":false,
@@ -53,7 +53,7 @@
     },
     {
         "id":"7",
-        "category": "free",
+        "category": "free course",
         "title": "Printing  | For Everyone Who Loves to Draw!",
         "author": "Gurukal Amit",
         "follow":false,
@@ -62,8 +62,8 @@
     },
     {
         "id":"8",
-        "category": "free",
-        "title": "Sketching LIVE | For Everyone Who Loves to Draw!",
+        "category": "free course",
+        "title": "Content Writing | How to Create Intriguing Content",
         "author": "Adhvith Nambiar",
         "follow":false,
         "price":"99",
@@ -80,7 +80,7 @@
     },
     {
         "id":"10",
-        "category": "free",
+        "category": "free course",
         "title": "Printing Business Secrets | Start Earning Online",
         "author": "Adhvith Nambiar",
         "follow":false,

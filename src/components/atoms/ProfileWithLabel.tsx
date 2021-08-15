@@ -5,8 +5,8 @@ interface profileImgI{
     src?: string;
 }
 const ProfileWithLabel: React.FC<profileImgI> = ({ label = 'Vishav Sharma', src = './assets/images/profile.svg' }): JSX.Element => (
-  <div className="flex text-left">
-    <img src={src} alt="user_profile" />
+  <div className="flex text-left  ">
+    <img src={src} alt="user_profile" className="transform transition duration-500 hover:scale-110 cursor-pointer" />
     <h6 className="pl-2  leading-4 text-xss">
       with
       <p className="text-sm font-semibold leading-4 ">{label}</p>

@@ -3,20 +3,15 @@ import IconButton from '../atoms/IconButton';
 import ProfileWithLabel from '../atoms/ProfileWithLabel';
 import Title from '../atoms/Title';
 import { ArrowForwardOutline } from 'react-ionicons'
+import { handleFollowing } from '../../redux';
+import { useDispatch } from 'react-redux';
+import { upContentI } from '../../Interfaces/shareInterface';
 
 
- interface upContentI{
-    title:string;
-    author:string;
-    img: string;
-    pay: string;
-    rating:string;
-    productImage:string;
-    follow: boolean;
-}
+ 
 
-const LiveNowContent: React.FC<upContentI> = ({title, author, img, rating,productImage,pay,follow}) => {
-
+const LiveNowContent: React.FC<upContentI> = ({title, author, img, rating,productImage,pay,follow,id}) => {
+  const disptach = useDispatch();
   
   return (<div className="relative w-full h-full ">
       <img src="./assets/images/boy1.jpeg"  alt="product_img" className="rounded-xl" />
@@ -28,6 +23,7 @@ const LiveNowContent: React.FC<upContentI> = ({title, author, img, rating,produc
         <ProfileWithLabel label={author} />
         <div className="relative w-18">
         <IconButton
+        id={id}
           icon={(
             <p className="w-2 ont-semibold absolute top-0.5 left-3 font-bold text-inherit">+</p>
 )}
@@ -36,8 +32,8 @@ const LiveNowContent: React.FC<upContentI> = ({title, author, img, rating,produc
         />
         </div>
         </div>
-        <div className="flex bg-primary justify-between rounded-b-md text-white  mb-1 mt-3  mx-2 p-3 cursor-pointer">
-          <p className="text-sm font-bold leading-6">What the class now for FREE</p>
+        <div className="flex bg-primary justify-between rounded-b-md text-white  mb-1 mt-3  mx-2 p-3 cursor-pointer transform transition duration-500 hover:scale-95">
+          <p className="text-sm font-bold leading-6 ">What the class now for FREE</p>
 
 <ArrowForwardOutline
   color={'inheriat'} 

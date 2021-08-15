@@ -9,6 +9,7 @@ export interface RootState {
     searchTerm: string,
     tempAllArray: [],
     error: string,
+    active: string
     }
   }
 
@@ -20,4 +21,15 @@ export interface RootState {
       price: string,
       rating: string,
       id: string
+  }
+
+  export interface upContentI{
+    title:string;
+    author:string;
+    img: string;
+    pay: string;
+    rating:string;
+    productImage:string;
+    follow: boolean;
+    id:string;
   }
